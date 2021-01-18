@@ -1,7 +1,7 @@
 package com.cssl.entity;
 
 import java.io.Serializable;
-
+//didddd
 public class Users implements Serializable {
     private String uname;
     private String upwd;
