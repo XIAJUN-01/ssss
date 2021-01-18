@@ -1,0 +1,40 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /touqiaoxitong
+
+#thymeleaf模板引擎
+spring:
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: utf-8
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/templates/,classpath:/META-NF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
+    #数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/maven?serverTimezone=GMT
+    username: root
+    password: root
+    #jackson
+  jackson:
+    date-format: yyyy-MM-dd HH:mm
+    time-zone: GMT+8
+
+mybatis:
+  type-aliases-package: com.cssl.entity
+  configuration:
+    auto-mapping-behavior: full
+    use-generated-keys: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#分页合理化配置
+pagehelper:
+  reasonable: true
+  page-size-zero: true
+  pageSizeZero: true
+
